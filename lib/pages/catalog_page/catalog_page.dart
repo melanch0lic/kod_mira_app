@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../home_page/components/category_list.dart';
+import 'components/catalog_category_list.dart';
 import 'components/product_catalog_list.dart';
 
 class CatalogPage extends StatelessWidget {
@@ -18,7 +18,7 @@ class CatalogPage extends StatelessWidget {
                 color: const Color.fromRGBO(44, 44, 46, 1),
               ),
         )),
-        const CategoryList(),
+        const CatalogCategoryList(),
         const Expanded(child: ProductCatalogList()),
       ]),
     );

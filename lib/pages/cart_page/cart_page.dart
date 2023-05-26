@@ -9,6 +9,7 @@ class CartPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final products = ref.watch(cartProvider);
+    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -16,8 +17,14 @@ class CartPage extends ConsumerWidget {
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black),
         ),
       ),
-      body: ListView.builder(
-          itemCount: products.length, itemBuilder: ((context, index) => ProductCard(product: products[index]))),
+      body: products.isEmpty
+          ? Center(
+              child: Text(
+              'Добавте товары в корзину...',
+              style: theme.textTheme.bodyMedium!.copyWith(color: Colors.black),
+            ))
+          : ListView.builder(
+              itemCount: products.length, itemBuilder: ((context, index) => ProductCard(product: products[index]))),
     );
   }
 }

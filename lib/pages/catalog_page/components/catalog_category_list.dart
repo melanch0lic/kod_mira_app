@@ -23,7 +23,7 @@ class CatalogCategoryList extends ConsumerWidget {
               GestureDetector(
                 onTap: () {
                   ref.watch(categoryCatalogTypeProvider.notifier).state = 0;
-                  ref.refresh(getProductByCategoryProvider);
+                  ref.invalidate(getProductByCategoryProvider);
                 },
                 child: Container(
                   width: 100,
@@ -55,7 +55,7 @@ class CatalogCategoryList extends ConsumerWidget {
               InkWell(
                 onTap: () {
                   ref.watch(categoryCatalogTypeProvider.notifier).state = 1;
-                  ref.refresh(getProductByCategoryProvider);
+                  ref.invalidate(getProductByCategoryProvider);
                 },
                 child: Container(
                   width: 200,
@@ -87,7 +87,7 @@ class CatalogCategoryList extends ConsumerWidget {
               GestureDetector(
                 onTap: () {
                   ref.watch(categoryCatalogTypeProvider.notifier).state = 2;
-                  ref.refresh(getProductByCategoryProvider);
+                  ref.invalidate(getProductByCategoryProvider);
                 },
                 child: Container(
                   width: 200,
@@ -125,7 +125,7 @@ class CatalogCategoryList extends ConsumerWidget {
               GestureDetector(
                 onTap: () {
                   ref.watch(categoryCatalogTypeProvider.notifier).state = 3;
-                  ref.refresh(getProductByCategoryProvider);
+                  ref.invalidate(getProductByCategoryProvider);
                 },
                 child: Container(
                   width: 200,
@@ -157,7 +157,7 @@ class CatalogCategoryList extends ConsumerWidget {
               GestureDetector(
                 onTap: () {
                   ref.watch(categoryCatalogTypeProvider.notifier).state = 4;
-                  ref.refresh(getProductByCategoryProvider);
+                  ref.invalidate(getProductByCategoryProvider);
                 },
                 child: Container(
                   width: 200,

@@ -17,6 +17,7 @@ class ProductCardCart extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Expanded(
             child: CachedNetworkImage(
+          width: double.infinity,
           imageUrl: product.urlImage,
           fit: BoxFit.cover,
         )),

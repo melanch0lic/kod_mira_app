@@ -1,7 +1,6 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kod_mira_app/providers/cart_provider.dart';
 
 class BottomNavBar extends ConsumerStatefulWidget {
   const BottomNavBar({super.key});
@@ -35,8 +34,7 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
           title: const Text("Тендер"),
         ),
         CustomNavigationBarItem(
-          badgeCount: ref.watch(cartCountProvider.notifier).state,
-          showBadge: true,
+          badgeCount: 66,
           icon: const Icon(Icons.shopping_cart),
           title: const Text("Корзина"),
         ),
