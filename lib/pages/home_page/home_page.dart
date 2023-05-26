@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kod_mira_app/pages/home_page/components/fermers_list.dart';
+import 'package:kod_mira_app/pages/home_page/components/product_list.dart';
 
+import 'components/category_list.dart';
 import 'components/story_slider.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,33 +24,43 @@ class HomePage extends StatelessWidget {
                 contentPadding: EdgeInsets.only(bottom: 13)),
           ),
         ),
-        actions: const [
-          Icon(Icons.tune),
-          SizedBox(
-            width: 16,
-          ),
-          Icon(Icons.shopping_cart),
-          SizedBox(
-            width: 4,
-          ),
-        ],
       ),
-      body: Column(children: [
-        const StorySlider(),
-        Expanded(
-            child: GridView.builder(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          itemCount: 10,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 3, crossAxisSpacing: 3),
-          itemBuilder: ((context, index) => SizedBox(
-                height: 200,
-                child: Card(
-                  child: Text('$index'),
+      body: SingleChildScrollView(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const StorySlider(),
+          Padding(
+            padding: const EdgeInsets.only(left: 8),
+            child: Text(
+              'Рекомендуем',
+              style: Theme.of(context).textTheme.displayLarge!.copyWith(color: const Color.fromRGBO(44, 44, 46, 1)),
+            ),
+          ),
+          const ProductList(),
+          Center(
+              child: Text(
+            'Категории',
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                  color: const Color.fromRGBO(44, 44, 46, 1),
                 ),
-              )),
-        ))
-      ]),
+          )),
+          const CategoryList(),
+          Center(
+              child: Text(
+            'Производители',
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                  color: const Color.fromRGBO(44, 44, 46, 1),
+                ),
+          )),
+          const FermasList(),
+          Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(onPressed: () {}, child: const Text('Показать больше')),
+            ),
+          )
+        ]),
+      ),
     );
   }
 }

@@ -15,27 +15,27 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return CustomNavigationBar(
       iconSize: 30.0,
-      selectedColor: const Color(0xff040307),
+      selectedColor: const Color.fromRGBO(132, 177, 0, 1),
       strokeColor: const Color(0x30040307),
-      unSelectedColor: const Color(0xffacacac),
+      unSelectedColor: const Color.fromRGBO(132, 177, 0, 1).withOpacity(0.5),
       backgroundColor: Colors.white,
       items: [
         CustomNavigationBarItem(
-          icon: const Icon(Icons.search),
-          title: const Text("Поиск"),
+          icon: const Icon(Icons.home),
+          title: const Text("Главная"),
         ),
         CustomNavigationBarItem(
-          icon: const Icon(Icons.favorite),
-          title: const Text("Избранное"),
+          icon: const Icon(Icons.local_mall),
+          title: const Text("Каталог"),
+        ),
+        CustomNavigationBarItem(
+          icon: const Icon(Icons.gavel),
+          title: const Text("Тендер"),
         ),
         CustomNavigationBarItem(
           showBadge: true,
-          icon: const Icon(Icons.add_shopping_cart),
-          title: const Text("Продажа"),
-        ),
-        CustomNavigationBarItem(
-          icon: const Icon(Icons.message),
-          title: const Text("Связь"),
+          icon: const Icon(Icons.shopping_cart),
+          title: const Text("Корзина"),
         ),
         CustomNavigationBarItem(
           icon: const Icon(Icons.account_circle),

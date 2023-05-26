@@ -11,6 +11,7 @@ class ProductModel {
   final double discount;
   final String adress;
   final String urlImage;
+  final String category;
 
   ProductModel(
       {required this.id,
@@ -19,7 +20,8 @@ class ProductModel {
       required this.price,
       required this.discount,
       required this.adress,
-      required this.urlImage});
+      required this.urlImage,
+      required this.category});
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => _$ProductModelFromJson(json);
 
