@@ -322,6 +322,7 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_svg
+
       sha256: "6ff8c902c8056af9736de2689f63f81c42e2d642b9f4c79dbf8790ae48b63012"
       url: "https://pub.dev"
     source: hosted
