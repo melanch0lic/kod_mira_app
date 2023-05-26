@@ -1,6 +1,4 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:kod_mira_app/navigation/router.gr.dart';
 
 class CategoryList extends StatelessWidget {
   const CategoryList({super.key});
@@ -148,29 +146,25 @@ class CategoryList extends StatelessWidget {
               const SizedBox(
                 width: 8,
               ),
-              GestureDetector(
-                onTap: () => context.router.push(const CategoriesRoute()),
+              Container(
+                width: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: const DecorationImage(
+                        image: NetworkImage('https://i.pinimg.com/564x/f0/fe/29/f0fe29e8e3de48a01a22b66a233dca09.jpg'),
+                        fit: BoxFit.cover)),
+                alignment: Alignment.bottomLeft,
                 child: Container(
-                  width: 100,
+                  padding: const EdgeInsets.all(8),
+                  width: double.infinity,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      image: const DecorationImage(
-                          image:
-                              NetworkImage('https://i.pinimg.com/564x/f0/fe/29/f0fe29e8e3de48a01a22b66a233dca09.jpg'),
-                          fit: BoxFit.cover)),
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.5),
-                        borderRadius:
-                            const BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15))),
-                    child: Text(
-                      'Все категории',
-                      style: theme.textTheme.displayMedium!
-                          .copyWith(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),
-                    ),
+                      color: Colors.black.withOpacity(0.5),
+                      borderRadius:
+                          const BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15))),
+                  child: Text(
+                    'Все категории',
+                    style: theme.textTheme.displayMedium!
+                        .copyWith(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),
                   ),
                 ),
               ),

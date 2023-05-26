@@ -1,14 +1,15 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BottomNavBar extends StatefulWidget {
+class BottomNavBar extends ConsumerStatefulWidget {
   const BottomNavBar({super.key});
 
   @override
-  State<BottomNavBar> createState() => _BottomNavBarState();
+  ConsumerState<BottomNavBar> createState() => _BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   int _currentIndex = 0;
 
   @override
@@ -33,7 +34,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           title: const Text("Тендер"),
         ),
         CustomNavigationBarItem(
-          showBadge: true,
+          badgeCount: 66,
           icon: const Icon(Icons.shopping_cart),
           title: const Text("Корзина"),
         ),

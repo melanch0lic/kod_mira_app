@@ -15,6 +15,8 @@ import 'package:auto_route/auto_route.dart' as _i9;
 import 'package:auto_route/empty_router_widgets.dart' as _i2;
 import 'package:flutter/material.dart' as _i10;
 
+import '../pages/cart_page/cart_page.dart' as _i8;
+import '../pages/catalog_page/catalog_page.dart' as _i7;
 import '../pages/categories_page/categories_page.dart' as _i4;
 import '../pages/farm_detail_page/farm_detail_page.dart' as _i5;
 import '../pages/home_page/home_page.dart' as _i3;
@@ -42,6 +44,18 @@ class AppRouter extends _i9.RootStackRouter {
       );
     },
     ProfileRouter.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i2.EmptyRouterPage(),
+      );
+    },
+    CatalogRouter.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i2.EmptyRouterPage(),
+      );
+    },
+    CartRouter.name: (routeData) {
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.EmptyRouterPage(),
@@ -81,6 +95,18 @@ class AppRouter extends _i9.RootStackRouter {
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i8.ProfileSettingsPage(),
+      );
+    },
+    CatalogRoute.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i7.CatalogPage(),
+      );
+    },
+    CartRoute.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i8.CartPage(),
       );
     },
   };
@@ -135,6 +161,35 @@ class AppRouter extends _i9.RootStackRouter {
                 ),
               ],
             ),
+            _i9.RouteConfig(
+              CatalogRouter.name,
+              path: 'catalog',
+              parent: TabsRouter.name,
+              children: [
+                _i9.RouteConfig(
+                  CatalogRoute.name,
+                  path: '',
+                  parent: CatalogRouter.name,
+                ),
+                _i9.RouteConfig(
+                  CategoriesRoute.name,
+                  path: 'categories',
+                  parent: CatalogRouter.name,
+                ),
+              ],
+            ),
+            _i9.RouteConfig(
+              CartRouter.name,
+              path: 'cart',
+              parent: TabsRouter.name,
+              children: [
+                _i9.RouteConfig(
+                  CartRoute.name,
+                  path: '',
+                  parent: CartRouter.name,
+                )
+              ],
+            ),
           ],
         )
       ];
@@ -177,6 +232,32 @@ class ProfileRouter extends _i9.PageRouteInfo<void> {
         );
 
   static const String name = 'ProfileRouter';
+}
+
+/// generated route for
+/// [_i2.EmptyRouterPage]
+class CatalogRouter extends _i9.PageRouteInfo<void> {
+  const CatalogRouter({List<_i9.PageRouteInfo>? children})
+      : super(
+          CatalogRouter.name,
+          path: 'catalog',
+          initialChildren: children,
+        );
+
+  static const String name = 'CatalogRouter';
+}
+
+/// generated route for
+/// [_i2.EmptyRouterPage]
+class CartRouter extends _i9.PageRouteInfo<void> {
+  const CartRouter({List<_i9.PageRouteInfo>? children})
+      : super(
+          CartRouter.name,
+          path: 'cart',
+          initialChildren: children,
+        );
+
+  static const String name = 'CartRouter';
 }
 
 /// generated route for
@@ -249,4 +330,28 @@ class ProfileSettingsRoute extends _i9.PageRouteInfo<void> {
         );
 
   static const String name = 'ProfileSettingsRoute';
+}
+
+/// generated route for
+/// [_i7.CatalogPage]
+class CatalogRoute extends _i9.PageRouteInfo<void> {
+  const CatalogRoute()
+      : super(
+          CatalogRoute.name,
+          path: '',
+        );
+
+  static const String name = 'CatalogRoute';
+}
+
+/// generated route for
+/// [_i8.CartPage]
+class CartRoute extends _i9.PageRouteInfo<void> {
+  const CartRoute()
+      : super(
+          CartRoute.name,
+          path: '',
+        );
+
+  static const String name = 'CartRoute';
 }

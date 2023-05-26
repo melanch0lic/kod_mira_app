@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/empty_router_widgets.dart';
+import 'package:kod_mira_app/pages/cart_page/cart_page.dart';
+import 'package:kod_mira_app/pages/catalog_page/catalog_page.dart';
 import 'package:kod_mira_app/pages/categories_page/categories_page.dart';
 
 import '../pages/farm_detail_page/farm_detail_page.dart';
@@ -37,6 +39,13 @@ import '../pages/tabs_page/tabs_page.dart';
             AutoRoute(page: ProfileSettingsPage, path: 'settings')
           ],
         ),
+        AutoRoute(path: 'catalog', name: 'CatalogRouter', page: EmptyRouterPage, children: [
+          AutoRoute(page: CatalogPage, initial: true),
+          AutoRoute(page: CategoriesPage, path: 'categories'),
+        ]),
+        AutoRoute(path: 'cart', name: 'CartRouter', page: EmptyRouterPage, children: [
+          AutoRoute(page: CartPage, initial: true),
+        ]),
       ],
     )
   ],

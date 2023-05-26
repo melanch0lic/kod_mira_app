@@ -16,7 +16,7 @@ class _TabsPageState extends State<TabsPage> {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-        routes: const [HomeRouter(), ProfileRouter(), ProfileRouter(), ProfileRouter(), ProfileRouter()],
+        routes: const [HomeRouter(), CatalogRouter(), ProfileRouter(), CartRouter(), ProfileRouter()],
         bottomNavigationBuilder: (_, tabsRouter) {
           return CustomNavigationBar(
             iconSize: 30.0,
