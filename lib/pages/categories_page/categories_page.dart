@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'components/category_tile_widget.dart';
 
@@ -10,13 +9,10 @@ class CategoriesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          leading: IconButton(
-            // highlightColor: theme.cardColor,
-            splashRadius: 15,
-            icon: SvgPicture.asset('assets/images/back_arrow_icon.svg', color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          title: const Text('Категории')),
+          title: Text(
+        'Категории',
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black),
+      )),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         child: SingleChildScrollView(
