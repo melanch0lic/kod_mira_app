@@ -13,6 +13,8 @@ ProductModel _$ProductModelFromJson(Map<String, dynamic> json) => ProductModel(
       price: (json['price'] as num).toDouble(),
       discount: (json['discount'] as num).toDouble(),
       adress: json['adress'] as String,
+      urlImage: json['urlImage'] as String,
+      category: json['category'] as String,
     );
 
 Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
@@ -23,4 +25,6 @@ Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
       'price': instance.price,
       'discount': instance.discount,
       'adress': instance.adress,
+      'urlImage': instance.urlImage,
+      'category': instance.category,
     };

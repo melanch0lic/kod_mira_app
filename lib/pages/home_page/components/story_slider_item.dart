@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/network/models/story_model.dart';
@@ -27,14 +28,19 @@ class StorySliderItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: Stack(
               children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: CachedNetworkImage(
+                    imageUrl: story.imgUrl,
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 Container(
                   decoration: BoxDecoration(
-                    color: theme.cardColor,
-                    image: DecorationImage(
-                      image: AssetImage(story.imgUrl),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
+                      gradient: LinearGradient(begin: Alignment.bottomLeft, end: Alignment.topRight, colors: [
+                    HexColor.fromHex(story.color).withOpacity(0.5),
+                    HexColor.fromHex(story.color).withOpacity(0)
+                  ])),
                 ),
                 Align(
                   alignment: Alignment.bottomLeft,
@@ -54,13 +60,13 @@ class StorySliderItem extends StatelessWidget {
                           Text(
                             story.description,
                             style: theme.textTheme.displayMedium!
-                                .copyWith(color: Colors.white, shadows: [const Shadow(blurRadius: 15.0)]),
+                                .copyWith(color: Colors.white, fontSize: 12, shadows: [const Shadow(blurRadius: 15.0)]),
                           ),
                         ],
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

@@ -7,14 +7,48 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-                height: 200,
-                child: Card(
-                  child: Column(children: [
-                    Expanded(child: Image.network(product.urlImage)),
-                    
-                  ]),
+    final theme = Theme.of(context);
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Container(
+        color: Colors.white,
+        height: 320,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          SizedBox(
+              width: double.infinity,
+              height: 130,
+              child: Image.network(
+                product.urlImage,
+                fit: BoxFit.cover,
+              )),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  product.category,
+                  style: theme.textTheme.bodyMedium!.copyWith(fontSize: 12, color: Colors.black),
                 ),
-              );
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '${product.price.toInt()} рублей',
+                      style: theme.textTheme.bodyMedium!.copyWith(fontSize: 20, color: Colors.black),
+                    ),
+                    const Icon(Icons.add)
+                  ],
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Text(product.name)
+              ],
+            ),
+          )
+        ]),
+      ),
+    );
   }
 }

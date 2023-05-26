@@ -24,57 +24,21 @@ class StorySlider extends StatelessWidget {
 
 final List<StoryModel> _storiesList = [
   StoryModel(
-    imgUrl: 'assets/stories_images/banner_0.jpg',
+    imgUrl: 'https://i.pinimg.com/564x/b1/83/c6/b183c61cf7fccce8b036a158f4f58e63.jpg',
+    color: '#84B100',
+    title: 'Всё от фермы, всё для фермы',
+    description: 'От овощей и фруктов до семян и сельскохозяйственной техники',
+  ),
+  StoryModel(
+    imgUrl: 'https://i.pinimg.com/564x/a8/0d/42/a80d42dffc58ba8fd94fa85d07b0526d.jpg',
     color: '#8233FF',
-    title: 'Честная рассрочка на оборудование',
-    description: '',
+    title: 'Всё от фермы, всё для фермы',
+    description: 'От овощей и фруктов до семян и сельскохозяйственной техники',
   ),
   StoryModel(
-    imgUrl: 'assets/stories_images/banner_1.jpg',
+    imgUrl: 'https://i.pinimg.com/564x/90/d3/97/90d3970f66d0683abace8e42502e5d1d.jpg',
     color: '#8233FF',
-    title: 'Быстрый интернет для своих',
-    description: '',
-  ),
-  StoryModel(
-    imgUrl: 'assets/stories_images/banner_2.jpg',
-    color: '#00B88C',
-    title: 'Преимущества услуг связи M2',
-    description: '',
-  ),
-  StoryModel(
-    imgUrl: 'assets/stories_images/banner_3.jpg',
-    color: '#8BDE1E',
-    title: 'Смотреть, не пересмотреть',
-    description: '',
-  ),
-  StoryModel(
-    imgUrl: 'assets/stories_images/banner_4.jpg',
-    color: '#8BDE1E',
-    title: 'Скорость - выше заявленной',
-    description: '',
-  ),
-  StoryModel(
-    imgUrl: 'assets/stories_images/banner_5.jpg',
-    color: '#8BDE1E',
-    title: 'Супергерои в своей сфере',
-    description: '',
-  ),
-  StoryModel(
-    imgUrl: 'assets/stories_images/banner_6.jpg',
-    color: '#8BDE1E',
-    title: 'Делу время, а играм совершенный интернет',
-    description: '',
-  ),
-  StoryModel(
-    imgUrl: 'assets/stories_images/banner_7.jpg',
-    color: '#8BDE1E',
-    title: 'Уверенными шагами к N1 ESG бизнесу в Республике',
-    description: '',
-  ),
-  StoryModel(
-    imgUrl: 'assets/stories_images/banner_8.jpg',
-    color: '#8BDE1E',
-    title: 'Привет, M2 Connect',
-    description: '',
+    title: 'Всё от фермы, всё для фермы',
+    description: 'От овощей и фруктов до семян и сельскохозяйственной техники',
   ),
 ];
