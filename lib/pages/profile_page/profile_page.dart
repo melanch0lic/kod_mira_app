@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:kod_mira_app/navigation/router.gr.dart';
 
 import 'components/profile_list_tile.dart';
 
@@ -13,7 +15,14 @@ class ProfilePage extends StatelessWidget {
         leading: InkWell(onTap: () {}, child: const Icon(Icons.notifications_none)),
         centerTitle: true,
         title: const Text('Привет, User!'),
-        actions: [InkWell(onTap: () {}, child: const CircleAvatar()), const SizedBox(width: 10)],
+        actions: [
+          InkWell(
+              onTap: () {
+                context.router.push(const ProfileSettingsRoute());
+              },
+              child: const CircleAvatar()),
+          const SizedBox(width: 10)
+        ],
       ),
       body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),

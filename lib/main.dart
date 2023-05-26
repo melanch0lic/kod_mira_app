@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kod_mira_app/pages/tabs_page/tabs_page.dart';
+import 'package:kod_mira_app/navigation/router.gr.dart';
 
 import 'theme/app_theme.dart';
 
@@ -13,13 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final appRouter = AppRouter();
+    return MaterialApp.router(
       title: 'Traveland',
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const TabsPage(),
-      // routerDelegate: appRouter.delegate(),
-      // routeInformationParser: appRouter.defaultRouteParser(),
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }
