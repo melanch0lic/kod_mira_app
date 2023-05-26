@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:kod_mira_app/pages/farm_detail_page/farm_detail_page.dart';
 import 'package:kod_mira_app/pages/widgets/review_rating_widget.dart';
 
 import '../../data/network/ferm_model.dart';
@@ -13,7 +14,12 @@ class FermCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const FarmDetailPage()),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.only(bottom: 15),
         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15), boxShadow: const [

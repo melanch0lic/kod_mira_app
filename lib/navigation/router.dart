@@ -30,7 +30,7 @@ import '../pages/tabs_page/tabs_page.dart';
           page: EmptyRouterPage,
           children: [
             AutoRoute(page: ProfilePage, initial: true),
-            AutoRoute(page: ProfileSettingsPage, path: 'settings' )
+            AutoRoute(page: ProfileSettingsPage, path: 'settings')
           ],
         ),
       ],
