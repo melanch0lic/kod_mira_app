@@ -18,9 +18,11 @@ import 'package:flutter/material.dart' as _i10;
 import '../pages/cart_page/cart_page.dart' as _i8;
 import '../pages/catalog_page/catalog_page.dart' as _i7;
 import '../pages/categories_page/categories_page.dart' as _i4;
+import '../pages/farm_detail_page/farm_detail_page.dart' as _i5;
 import '../pages/home_page/home_page.dart' as _i3;
-import '../pages/profile_page/profile_page.dart' as _i5;
-import '../pages/profile_settings_page/profile_settings.dart' as _i6;
+import '../pages/product_detail_page/product_detail_page.dart' as _i6;
+import '../pages/profile_page/profile_page.dart' as _i7;
+import '../pages/profile_settings_page/profile_settings.dart' as _i8;
 import '../pages/tabs_page/tabs_page.dart' as _i1;
 
 class AppRouter extends _i9.RootStackRouter {
@@ -71,16 +73,28 @@ class AppRouter extends _i9.RootStackRouter {
         child: const _i4.CategoriesPage(),
       );
     },
+    FarmDetailRoute.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i5.FarmDetailPage(),
+      );
+    },
+    ProductDetailRoute.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i6.ProductDetailPage(),
+      );
+    },
     ProfileRoute.name: (routeData) {
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i5.ProfilePage(),
+        child: const _i7.ProfilePage(),
       );
     },
     ProfileSettingsRoute.name: (routeData) {
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i6.ProfileSettingsPage(),
+        child: const _i8.ProfileSettingsPage(),
       );
     },
     CatalogRoute.name: (routeData) {
@@ -116,6 +130,16 @@ class AppRouter extends _i9.RootStackRouter {
                 _i9.RouteConfig(
                   CategoriesRoute.name,
                   path: 'categories',
+                  parent: HomeRouter.name,
+                ),
+                _i9.RouteConfig(
+                  FarmDetailRoute.name,
+                  path: 'farm',
+                  parent: HomeRouter.name,
+                ),
+                _i9.RouteConfig(
+                  ProductDetailRoute.name,
+                  path: 'product',
                   parent: HomeRouter.name,
                 ),
               ],
@@ -261,7 +285,31 @@ class CategoriesRoute extends _i9.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.ProfilePage]
+/// [_i5.FarmDetailPage]
+class FarmDetailRoute extends _i9.PageRouteInfo<void> {
+  const FarmDetailRoute()
+      : super(
+          FarmDetailRoute.name,
+          path: 'farm',
+        );
+
+  static const String name = 'FarmDetailRoute';
+}
+
+/// generated route for
+/// [_i6.ProductDetailPage]
+class ProductDetailRoute extends _i9.PageRouteInfo<void> {
+  const ProductDetailRoute()
+      : super(
+          ProductDetailRoute.name,
+          path: 'product',
+        );
+
+  static const String name = 'ProductDetailRoute';
+}
+
+/// generated route for
+/// [_i7.ProfilePage]
 class ProfileRoute extends _i9.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
@@ -273,7 +321,7 @@ class ProfileRoute extends _i9.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.ProfileSettingsPage]
+/// [_i8.ProfileSettingsPage]
 class ProfileSettingsRoute extends _i9.PageRouteInfo<void> {
   const ProfileSettingsRoute()
       : super(
