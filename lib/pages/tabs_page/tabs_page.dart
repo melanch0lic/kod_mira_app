@@ -1,16 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kod_mira_app/navigation/router.gr.dart';
+import 'package:kod_mira_app/providers/cart_provider.dart';
 
-class TabsPage extends StatefulWidget {
+class TabsPage extends ConsumerStatefulWidget {
   const TabsPage({super.key});
 
   @override
-  State<TabsPage> createState() => _TabsPageState();
+  ConsumerState<TabsPage> createState() => _TabsPageState();
 }
 
-class _TabsPageState extends State<TabsPage> {
+class _TabsPageState extends ConsumerState<TabsPage> {
   int _currentIndex = 0;
 
   @override
@@ -38,6 +40,7 @@ class _TabsPageState extends State<TabsPage> {
                 title: const Text("Тендер"),
               ),
               CustomNavigationBarItem(
+                badgeCount: ref.watch(cartCountProvider.notifier).state,
                 showBadge: true,
                 icon: const Icon(Icons.shopping_cart),
                 title: const Text("Корзина"),
