@@ -12,7 +12,7 @@ class CategoryList extends StatelessWidget {
       child: Column(children: [
         Expanded(
           child: ListView(
-            // padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             scrollDirection: Axis.horizontal,
             children: [
               Container(
@@ -89,7 +89,7 @@ class CategoryList extends StatelessWidget {
         const SizedBox(height: 8),
         Expanded(
           child: ListView(
-            //padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             scrollDirection: Axis.horizontal,
             children: [
               Container(

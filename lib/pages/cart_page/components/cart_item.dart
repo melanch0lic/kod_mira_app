@@ -11,6 +11,7 @@ class CartItem extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       height: 135,
+      margin: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15)),
       child: Row(children: [
         SizedBox(
@@ -31,7 +32,13 @@ class CartItem extends StatelessWidget {
                 style: theme.textTheme.bodyMedium!.copyWith(color: Colors.black, fontSize: 20),
               ),
               const Row(
-                children: [Icon(Icons.favorite_outline), Icon(Icons.close)],
+                children: [
+                  Icon(Icons.favorite_outline),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Icon(Icons.close)
+                ],
               ),
             ],
           ),

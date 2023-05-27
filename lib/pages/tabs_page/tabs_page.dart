@@ -24,14 +24,17 @@ class _TabsPageState extends ConsumerState<TabsPage> {
         bottomNavigationBuilder: (_, tabsRouter) {
           return CustomNavigationBar(
             borderRadius: const Radius.circular(15),
-            iconSize: 30.0,
             selectedColor: const Color.fromRGBO(132, 177, 0, 1),
             strokeColor: const Color(0x30040307),
             unSelectedColor: const Color.fromRGBO(132, 177, 0, 1).withOpacity(0.5),
             backgroundColor: Colors.white,
             items: [
               CustomNavigationBarItem(
-                icon: SvgPicture.asset('assets/images/home.svg'),
+                icon: SvgPicture.asset(
+                  'assets/images/home.svg',
+                  width: 24,
+                  height: 24,
+                ),
                 title: Text(
                   "Главная",
                   style: theme.textTheme.bodyMedium!
@@ -39,7 +42,11 @@ class _TabsPageState extends ConsumerState<TabsPage> {
                 ),
               ),
               CustomNavigationBarItem(
-                icon: SvgPicture.asset('assets/images/catalog.svg'),
+                icon: SvgPicture.asset(
+                  'assets/images/catalog.svg',
+                  width: 24,
+                  height: 24,
+                ),
                 title: Text(
                   "Каталог",
                   style: theme.textTheme.bodyMedium!
@@ -47,7 +54,7 @@ class _TabsPageState extends ConsumerState<TabsPage> {
                 ),
               ),
               CustomNavigationBarItem(
-                icon: const Icon(Icons.gavel),
+                icon: const Icon(Icons.gavel, size: 24),
                 title: Text(
                   "Тендер",
                   style: theme.textTheme.bodyMedium!
@@ -57,7 +64,11 @@ class _TabsPageState extends ConsumerState<TabsPage> {
               CustomNavigationBarItem(
                 badgeCount: ref.watch(cartCountProvider.notifier).state,
                 showBadge: true,
-                icon: SvgPicture.asset('assets/images/carma.svg'),
+                icon: SvgPicture.asset(
+                  'assets/images/carma.svg',
+                  width: 24,
+                  height: 24,
+                ),
                 title: Text(
                   "Корзина",
                   style: theme.textTheme.bodyMedium!
@@ -65,7 +76,11 @@ class _TabsPageState extends ConsumerState<TabsPage> {
                 ),
               ),
               CustomNavigationBarItem(
-                icon: SvgPicture.asset('assets/images/profile.svg'),
+                icon: SvgPicture.asset(
+                  'assets/images/profile.svg',
+                  width: 24,
+                  height: 24,
+                ),
                 title: Text(
                   "Профиль",
                   style: theme.textTheme.bodyMedium!

@@ -4,22 +4,31 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kod_mira_app/data/network/models/product_model.dart';
 import 'package:kod_mira_app/providers/cart_provider.dart';
 
-class ProductCardCart extends StatelessWidget {
+class ProductCardCart extends ConsumerStatefulWidget {
   final ProductModel product;
   const ProductCardCart({super.key, required this.product});
 
   @override
+  ConsumerState<ProductCardCart> createState() => _ProductCardCartState();
+}
+
+class _ProductCardCartState extends ConsumerState<ProductCardCart> {
+  @override
   Widget build(BuildContext context) {
+    final products = ref.watch(cartProvider);
     final theme = Theme.of(context);
     return Container(
       height: 310,
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Expanded(
-            child: CachedNetworkImage(
-          width: double.infinity,
-          imageUrl: product.urlImage,
-          fit: BoxFit.cover,
+            child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: CachedNetworkImage(
+            width: double.infinity,
+            imageUrl: widget.product.urlImage,
+            fit: BoxFit.cover,
+          ),
         )),
         Expanded(
             child: Padding(
@@ -28,16 +37,16 @@ class ProductCardCart extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${product.price.toInt()}₽',
+                '${widget.product.price.toInt()}₽',
                 style: theme.textTheme.bodyMedium!.copyWith(color: Colors.black, fontSize: 20),
               ),
               const SizedBox(height: 3),
               Text(
-                product.name,
+                widget.product.name,
                 style: theme.textTheme.bodyMedium!.copyWith(color: const Color.fromRGBO(44, 44, 46, 1)),
               ),
               Text(
-                product.category,
+                widget.product.category,
                 style: theme.textTheme.bodyMedium!.copyWith(color: const Color.fromRGBO(44, 44, 46, 1)),
               ),
               const SizedBox(
@@ -46,21 +55,34 @@ class ProductCardCart extends StatelessWidget {
               Consumer(
                 builder: (context, ref, child) {
                   return InkWell(
-                    onTap: () {
-                      ref.watch(cartProvider.notifier).state = ref.read(cartProvider) + [product];
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          backgroundColor: Color.fromRGBO(132, 177, 0, 1), content: Text('Товар добавлен в корзину')));
-                    },
+                    onTap: products.contains(widget.product)
+                        ? () {
+                            ref.watch(cartProvider.notifier).state =
+                                ref.read(cartProvider).where((element) => element.id != widget.product.id).toList();
+                          }
+                        : () {
+                            ref.watch(cartProvider.notifier).state = ref.read(cartProvider) + [widget.product];
+                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                duration: Duration(seconds: 1),
+                                backgroundColor: Color.fromRGBO(132, 177, 0, 1),
+                                content: Text('Товар добавлен в корзину')));
+                          },
                     child: Container(
                       decoration: BoxDecoration(
-                          color: const Color.fromRGBO(132, 177, 0, 1), borderRadius: BorderRadius.circular(15)),
+                          color: products.contains(widget.product)
+                              ? theme.scaffoldBackgroundColor
+                              : const Color.fromRGBO(132, 177, 0, 1),
+                          borderRadius: BorderRadius.circular(15)),
                       width: double.infinity,
                       height: 30,
                       child: Center(
-                          child: Text(
-                        'Добавить в корзину',
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.white),
-                      )),
+                          child: products.contains(widget.product)
+                              ? Text('Убрать из корзины',
+                                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black))
+                              : Text(
+                                  'Добавить в корзину',
+                                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.white),
+                                )),
                     ),
                   );
                 },
