@@ -12,12 +12,11 @@ class CatalogCategoryList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return SizedBox(
-      // padding: const EdgeInsets.symmetric(vertical: 8),
       height: 200,
       child: Column(children: [
         Expanded(
           child: ListView(
-            // padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             scrollDirection: Axis.horizontal,
             children: [
               GestureDetector(
@@ -35,7 +34,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    //padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -67,7 +66,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    // padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -99,7 +98,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    //  padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -119,7 +118,7 @@ class CatalogCategoryList extends ConsumerWidget {
         const SizedBox(height: 8),
         Expanded(
           child: ListView(
-            // padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             scrollDirection: Axis.horizontal,
             children: [
               GestureDetector(
@@ -137,7 +136,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    //padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -167,7 +166,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    // padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -194,7 +193,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    // padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),

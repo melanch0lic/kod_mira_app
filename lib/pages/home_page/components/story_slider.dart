@@ -10,7 +10,7 @@ class StorySlider extends StatelessWidget {
     return SizedBox(
       height: 165,
       child: ListView.builder(
-        //  padding: const EdgeInsets.only(left: 5),
+        padding: const EdgeInsets.only(left: 5),
         itemCount: _storiesList.length,
         itemBuilder: (context, index) => StorySliderItem(
           _storiesList[index],

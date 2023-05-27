@@ -30,53 +30,65 @@ class HomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Padding(
-            padding: EdgeInsets.only(right: 5, left: 15),
-            child: StorySlider(),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 30),
-                Text(
+          const StorySlider(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
+                child: Text(
                   'Рекомендуем',
                   style: Theme.of(context)
                       .textTheme
                       .displayLarge!
                       .copyWith(color: const Color.fromRGBO(44, 44, 46, 1), fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                const ProductList(),
-                //const SizedBox(height: 10),
-                ShowRowHeader(press: () {
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: ProductList(),
+              ),
+              //const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: ShowRowHeader(press: () {
                   //   context.router.push(const FarmRoute());
                 }),
-                const SizedBox(height: 10),
-                Text(
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Text(
                   'Категории',
                   style: Theme.of(context)
                       .textTheme
                       .displayLarge!
                       .copyWith(color: const Color.fromRGBO(44, 44, 46, 1), fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(height: 15),
-                const CategoryList(),
-                const SizedBox(height: 30),
-                Text(
+              ),
+              const SizedBox(height: 15),
+              const CategoryList(),
+              const SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Text(
                   'Производители',
                   style: Theme.of(context)
                       .textTheme
                       .displayLarge!
                       .copyWith(color: const Color.fromRGBO(44, 44, 46, 1), fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(height: 15),
-                const FermasList(),
-                ShowRowHeader(press: () {
-                  context.router.push(const FarmRoute());
-                }),
-              ],
-            ),
+              ),
+              const SizedBox(height: 15),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: FermasList(),
+              ),
+              ShowRowHeader(press: () {
+                context.router.push(const FarmRoute());
+              }),
+            ],
           )
         ]),
       ),
