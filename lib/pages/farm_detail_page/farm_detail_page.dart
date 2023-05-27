@@ -5,7 +5,7 @@ import 'package:kod_mira_app/pages/farm_detail_page/components/info_farm_widget.
 
 import '../product_detail_page/components/header_two_widget.dart';
 import '../product_detail_page/components/review_info_widget.dart';
-import '../product_detail_page/components/show_row_header.dart';
+import '../widgets/show_row_header.dart';
 import '../widgets/sent_review_button.dart';
 
 class FarmDetailPage extends StatelessWidget {
@@ -21,7 +21,7 @@ class FarmDetailPage extends StatelessWidget {
             icon: SvgPicture.asset('assets/images/back_arrow_icon.svg', color: Colors.black),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          actions: const [Icon(Icons.favorite)],
+          actions: const [Icon(Icons.favorite), SizedBox(width: 15)],
           title: const Text(
             'Ферма "Герменчукский"',
             style: TextStyle(color: Colors.black),
@@ -55,19 +55,19 @@ class FarmDetailPage extends StatelessWidget {
                 const SizedBox(height: 30),
                 const HeaderTwoWidget(name: 'Товары от производителя'),
                 const SizedBox(height: 20),
-                const ShowRowHeader(),
+                ShowRowHeader(press: () {}),
                 const SizedBox(height: 30),
                 const Row(
                   children: [HeaderTwoWidget(name: 'Отзывы'), Spacer()],
                 ),
                 const SizedBox(height: 15),
                 const ReviewInfoWidget(),
-                const ShowRowHeader(),
+                ShowRowHeader(press: () {}),
                 const SentReviewButton(),
                 const SizedBox(height: 30),
                 const HeaderTwoWidget(name: 'Похожие производители'),
                 const SizedBox(height: 30),
-                const ShowRowHeader(),
+                ShowRowHeader(press: () {}),
               ],
             ),
           )

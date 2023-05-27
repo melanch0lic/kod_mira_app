@@ -6,13 +6,13 @@ class CategoryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+    return SizedBox(
+      // padding: const EdgeInsets.symmetric(vertical: 8),
       height: 200,
       child: Column(children: [
         Expanded(
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            // padding: const EdgeInsets.symmetric(horizontal: 8),
             scrollDirection: Axis.horizontal,
             children: [
               Container(
@@ -37,9 +37,7 @@ class CategoryList extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 8,
-              ),
+              const SizedBox(width: 8),
               Container(
                 width: 200,
                 decoration: BoxDecoration(
@@ -62,9 +60,7 @@ class CategoryList extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 8,
-              ),
+              const SizedBox(width: 8),
               Container(
                 width: 200,
                 decoration: BoxDecoration(
@@ -74,7 +70,7 @@ class CategoryList extends StatelessWidget {
                         fit: BoxFit.cover)),
                 alignment: Alignment.bottomLeft,
                 child: Container(
-                  padding: const EdgeInsets.all(8),
+                  // padding: const EdgeInsets.all(8),
                   width: double.infinity,
                   decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.5),
@@ -93,7 +89,7 @@ class CategoryList extends StatelessWidget {
         const SizedBox(height: 8),
         Expanded(
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            //padding: const EdgeInsets.symmetric(horizontal: 8),
             scrollDirection: Axis.horizontal,
             children: [
               Container(

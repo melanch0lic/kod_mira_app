@@ -94,4 +94,21 @@ class ApiClient {
     ];
     return products[categoryType];
   }
+
+  /* Future<List<FermModel>>  getFerms() async {
+    await Future.delayed(const Duration(seconds: 2));
+    final ferms = [
+      List.generate(
+        5,
+        (index) => FermModel(
+          id: index,
+          name: 'Моя ферма',
+          adress: 'Пр. мира, 1',
+          ownerName: 'string',
+          productCategories: [1, 2, 3],
+          urlImage: 'string',
+        ),
+      ),
+    ];
+  }*/
 }

@@ -21,9 +21,9 @@ class StorySliderItem extends StatelessWidget {
         );
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.only(top: 30, right: 10),
         child: SizedBox(
-          width: 300,
+          width: 330,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Stack(
@@ -45,27 +45,36 @@ class StorySliderItem extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomLeft,
                   child: Padding(
-                    padding: const EdgeInsets.all(13.0),
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 200),
+                      padding: const EdgeInsets.only(left: 15, bottom: 25),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Text(
-                            story.title.toUpperCase(),
-                            style: theme.textTheme.displayMedium!
-                                .copyWith(color: Colors.white, shadows: [const Shadow(blurRadius: 15.0)]),
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 160),
+                            child: Text(
+                              story.title,
+                              style: theme.textTheme.displayMedium!.copyWith(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                  shadows: [const Shadow(blurRadius: 15.0)]),
+                            ),
                           ),
-                          Text(
-                            story.description,
-                            style: theme.textTheme.displayMedium!
-                                .copyWith(color: Colors.white, fontSize: 12, shadows: [const Shadow(blurRadius: 15.0)]),
-                          ),
+                          const SizedBox(height: 10),
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 300),
+                            child: Text(
+                              story.description,
+                              style: theme.textTheme.displayMedium!.copyWith(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  shadows: [const Shadow(blurRadius: 15.0)]),
+                            ),
+                          )
                         ],
-                      ),
-                    ),
-                  ),
+                      )),
                 ),
               ],
             ),

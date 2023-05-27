@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kod_mira_app/pages/product_detail_page/components/show_row_header.dart';
+import 'package:kod_mira_app/pages/widgets/show_row_header.dart';
 import 'package:kod_mira_app/pages/widgets/sent_review_button.dart';
 
 import 'components/header_two_widget.dart';
@@ -21,7 +21,7 @@ class ProductDetailPage extends StatelessWidget {
             icon: SvgPicture.asset('assets/images/back_arrow_icon.svg', color: Colors.black),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          actions: const [Icon(Icons.favorite)],
+          actions: const [Icon(Icons.favorite), SizedBox(width: 15)],
           title: const Text(
             'Картофель',
             style: TextStyle(color: Colors.black),
@@ -61,14 +61,14 @@ class ProductDetailPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 const ReviewInfoWidget(),
-                const ShowRowHeader(),
+                ShowRowHeader(press: () {}),
                 const SentReviewButton(),
                 const SizedBox(height: 30),
                 const HeaderTwoWidget(name: 'Производитель'),
                 const SizedBox(height: 30),
                 const HeaderTwoWidget(name: 'Еще от производителя'),
                 const SizedBox(height: 20),
-                const ShowRowHeader(),
+                ShowRowHeader(press: () {}),
               ],
             ),
           )

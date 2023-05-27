@@ -17,23 +17,49 @@ class ProductList extends StatelessWidget {
           discount: 10,
           adress: 'Пр.Мира',
           urlImage: 'https://i.pinimg.com/564x/47/b8/77/47b8774420b943533eb659805a943fde.jpg',
+          category: 'Фермерские продукты'),
+      ProductModel(
+          id: 1,
+          name: 'Томаты',
+          description: 'Сочные',
+          price: 63,
+          discount: 0,
+          adress: 'Пр.Мира',
+          urlImage: 'https://i.pinimg.com/564x/52/62/ae/5262ae3d39d5d898f99922c70c4f75ab.jpg',
+          category: 'Фермерские продукты'),
+      ProductModel(
+          id: 2,
+          name: 'Огурцы',
+          description: 'Сочные',
+          price: 48,
+          discount: 10,
+          adress: 'Пр.Мира',
+          urlImage: 'https://i.pinimg.com/564x/8b/00/9a/8b009a222873f96d51a3bc419a1ba41d.jpg',
+          category: 'Фермерские продукты'),
+      ProductModel(
+          id: 3,
+          name: 'Огурцы',
+          description: 'Сочные',
+          price: 72,
+          discount: 10,
+          adress: 'Пр.Мира',
+          urlImage: 'https://i.pinimg.com/564x/8b/00/9a/8b009a222873f96d51a3bc419a1ba41d.jpg',
           category: 'Фермерские продукты')
     ];
     return SizedBox(
-        height: 600,
+        height: 480,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Expanded(
               child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                  padding: const EdgeInsets.only(top: 10, right: 8, left: 8),
-                  itemCount: 6,
+                  padding: const EdgeInsets.only(top: 15),
+                  itemCount: 4,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, mainAxisSpacing: 6, crossAxisSpacing: 6, mainAxisExtent: 220),
-                  itemBuilder: ((context, index) => ProductCard(product: products[0]))),
+                      crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 10, mainAxisExtent: 220),
+                  itemBuilder: ((context, index) => ProductCard(product: products[index]))),
             ),
-            TextButton(onPressed: () {}, child: const Text('Показать больше'))
           ],
         ));
   }

@@ -3,6 +3,7 @@ import 'package:auto_route/empty_router_widgets.dart';
 import 'package:kod_mira_app/pages/cart_page/cart_page.dart';
 import 'package:kod_mira_app/pages/catalog_page/catalog_page.dart';
 import 'package:kod_mira_app/pages/categories_page/categories_page.dart';
+import 'package:kod_mira_app/pages/farm_page/farm_page.dart';
 
 import '../pages/farm_detail_page/farm_detail_page.dart';
 import '../pages/home_page/home_page.dart';
@@ -26,8 +27,9 @@ import '../pages/tabs_page/tabs_page.dart';
           children: [
             AutoRoute(page: HomePage, initial: true),
             AutoRoute(page: CategoriesPage, path: 'categories'),
-            AutoRoute(page: FarmDetailPage, path: 'farm'),
-            AutoRoute(page: ProductDetailPage, path: 'product')
+            AutoRoute(page: FarmDetailPage, path: 'farm_detailis'),
+            AutoRoute(page: ProductDetailPage, path: 'product_detailis'),
+            AutoRoute(page: FarmPage, path: 'farm')
           ],
         ),
         AutoRoute(

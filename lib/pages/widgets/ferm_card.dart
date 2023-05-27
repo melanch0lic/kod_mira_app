@@ -22,7 +22,7 @@ class FermCard extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 15),
         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15), boxShadow: const [
           BoxShadow(
-            blurRadius: 24,
+            blurRadius: 20,
             color: Color.fromRGBO(149, 157, 165, 0.25),
           )
         ]),
