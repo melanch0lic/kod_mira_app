@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-class InfoProductWidget extends StatelessWidget {
-  const InfoProductWidget({super.key});
+import '../../../data/network/models/product_model.dart';
 
+class InfoProductWidget extends StatelessWidget {
+  const InfoProductWidget({super.key, required this.product});
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -10,11 +12,11 @@ class InfoProductWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Картофель',
+          product.name,
           style: Theme.of(context).textTheme.displayLarge!.copyWith(color: const Color.fromRGBO(44, 44, 46, 1)),
         ),
         const SizedBox(height: 10),
-        Text('Сорт: египетский',
+        Text('Категория: ${product.category}',
             style: Theme.of(context)
                 .textTheme
                 .displayLarge!
@@ -23,7 +25,7 @@ class InfoProductWidget extends StatelessWidget {
         RichText(
             textDirection: TextDirection.ltr,
             text: TextSpan(
-              text: "58₽",
+              text: "${product.price.ceil()}₽",
               style: Theme.of(context)
                   .textTheme
                   .displayLarge!

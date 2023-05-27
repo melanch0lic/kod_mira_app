@@ -10,7 +10,7 @@ class ApiClient {
     await Future.delayed(const Duration(seconds: 2));
     final products = [
       List.generate(
-        10,
+        4,
         (index) => ProductModel(
             id: index,
             name: 'Product $index',
@@ -20,10 +20,10 @@ class ApiClient {
             discount: 10,
             adress: 'Пр. Мира',
             urlImage: 'https://i.pinimg.com/564x/0c/b9/41/0cb94134073a809a457b8421bec38c2b.jpg',
-            category: 'Овощи'),
+            category: 'Овощи, фрукты'),
       ),
       List.generate(
-        10,
+        4,
         (index) => ProductModel(
             id: index,
             name: 'Product $index',
@@ -36,7 +36,7 @@ class ApiClient {
             category: 'Молочная продукция'),
       ),
       List.generate(
-        10,
+        4,
         (index) => ProductModel(
             id: index,
             name: 'Product $index',
@@ -49,7 +49,7 @@ class ApiClient {
             category: 'Мясо'),
       ),
       List.generate(
-        10,
+        4,
         (index) => ProductModel(
             id: index,
             name: 'Product $index',
@@ -62,7 +62,7 @@ class ApiClient {
             category: 'Крупы, злаки'),
       ),
       List.generate(
-        10,
+        4,
         (index) => ProductModel(
             id: index,
             name: 'Product $index',
@@ -75,7 +75,7 @@ class ApiClient {
             category: 'Рыба, морепродукты'),
       ),
       List.generate(
-        10,
+        4,
         (index) => ProductModel(
             id: index,
             name: 'Product $index',
@@ -88,7 +88,7 @@ class ApiClient {
             category: 'Чай, кофе'),
       ),
       List.generate(
-        10,
+        4,
         (index) => ProductModel(
             id: index,
             name: 'Product $index',

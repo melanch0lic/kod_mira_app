@@ -1,8 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kod_mira_app/data/network/models/product_model.dart';
 import 'package:kod_mira_app/providers/cart_provider.dart';
+
+import '../../navigation/router.gr.dart';
 
 class ProductCardCart extends ConsumerStatefulWidget {
   final ProductModel product;
@@ -22,12 +25,17 @@ class _ProductCardCartState extends ConsumerState<ProductCardCart> {
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Expanded(
-            child: ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: CachedNetworkImage(
-            width: double.infinity,
-            imageUrl: widget.product.urlImage,
-            fit: BoxFit.cover,
+            child: GestureDetector(
+          onTap: () {
+            context.router.push(ProductDetailRoute(product: widget.product));
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: CachedNetworkImage(
+              width: double.infinity,
+              imageUrl: widget.product.urlImage,
+              fit: BoxFit.cover,
+            ),
           ),
         )),
         Expanded(

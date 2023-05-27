@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kod_mira_app/navigation/router.gr.dart';
 import 'package:kod_mira_app/pages/home_page/components/fermers_list.dart';
-import 'package:kod_mira_app/pages/home_page/components/product_list.dart';
 
+import '../catalog_page/components/product_catalog_list.dart';
 import '../widgets/show_row_header.dart';
 import 'components/category_list.dart';
 import 'components/story_slider.dart';
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
-                child: ProductList(),
+                child: ProductCatalogList(),
               ),
               //const SizedBox(height: 10),
               Padding(

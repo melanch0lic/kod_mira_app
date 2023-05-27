@@ -1,30 +1,25 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:kod_mira_app/pages/widgets/show_row_header.dart';
 import 'package:kod_mira_app/pages/widgets/sent_review_button.dart';
 
+import '../../data/network/models/product_model.dart';
+import '../home_page/components/fermers_list.dart';
 import 'components/header_two_widget.dart';
 import 'components/info_product_widget.dart';
 import 'components/review_info_widget.dart';
 
 class ProductDetailPage extends StatelessWidget {
-  const ProductDetailPage({super.key});
-
+  const ProductDetailPage({super.key, required this.product});
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          leading: IconButton(
-            // highlightColor: theme.cardColor,
-            splashRadius: 15,
-            icon: SvgPicture.asset('assets/images/back_arrow_icon.svg', color: Colors.black),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          actions: const [Icon(Icons.favorite), SizedBox(width: 15)],
-          title: const Text(
-            'Картофель',
-            style: TextStyle(color: Colors.black),
+          actions: const [Icon(Icons.favorite_outline), SizedBox(width: 15)],
+          title: Text(
+            product.name,
+            style: const TextStyle(color: Colors.black),
           )),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -40,12 +35,12 @@ class ProductDetailPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const InfoProductWidget(),
+                InfoProductWidget(product: product),
                 const SizedBox(height: 30),
                 const HeaderTwoWidget(name: 'Описание'),
                 const SizedBox(height: 15),
                 Text(
-                    'Вы погуляете по центру Владикавказа и найдете отголоски XIX века, воплощенные в старинных гостиницах, купеческих домах, бывших типографиях и концернах. Услышите об особенностях архитектуры и о знаменитых людях, которые здесь родились и жили. Познакомитесь с...',
+                    'Картофель — многолетнее травянистое растение из семейства пасленовых. Его плоды ядовиты, в пищу употребляют только клубни — видоизмененные подземные побеги. То, что мы называем картофелем, содержит....',
                     style: Theme.of(context).textTheme.displayLarge!.copyWith(
                         color: const Color.fromRGBO(44, 44, 46, 1), fontSize: 16, fontWeight: FontWeight.w400)),
                 const SizedBox(height: 10),
@@ -65,9 +60,9 @@ class ProductDetailPage extends StatelessWidget {
                 const SentReviewButton(),
                 const SizedBox(height: 30),
                 const HeaderTwoWidget(name: 'Производитель'),
-                const SizedBox(height: 30),
-                const HeaderTwoWidget(name: 'Еще от производителя'),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
+                const FermasList(),
+                //const SizedBox(height: 20),
                 ShowRowHeader(press: () {}),
               ],
             ),
