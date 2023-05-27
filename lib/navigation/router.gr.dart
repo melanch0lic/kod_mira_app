@@ -15,7 +15,8 @@ import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:auto_route/empty_router_widgets.dart' as _i2;
 import 'package:flutter/material.dart' as _i15;
 
-import '../data/network/models/tender_model.dart' as _i16;
+import '../data/network/models/product_model.dart' as _i16;
+import '../data/network/models/tender_model.dart' as _i17;
 import '../pages/cart_page/cart_page.dart' as _i11;
 import '../pages/catalog_page/catalog_page.dart' as _i10;
 import '../pages/categories_page/categories_page.dart' as _i4;
@@ -90,9 +91,13 @@ class AppRouter extends _i14.RootStackRouter {
       );
     },
     ProductDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<ProductDetailRouteArgs>();
       return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i6.ProductDetailPage(),
+        child: _i6.ProductDetailPage(
+          key: args.key,
+          product: args.product,
+        ),
       );
     },
     FarmRoute.name: (routeData) {
@@ -365,14 +370,36 @@ class FarmDetailRoute extends _i14.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i6.ProductDetailPage]
-class ProductDetailRoute extends _i14.PageRouteInfo<void> {
-  const ProductDetailRoute()
-      : super(
+class ProductDetailRoute extends _i14.PageRouteInfo<ProductDetailRouteArgs> {
+  ProductDetailRoute({
+    _i15.Key? key,
+    required _i16.ProductModel product,
+  }) : super(
           ProductDetailRoute.name,
           path: 'product_detailis',
+          args: ProductDetailRouteArgs(
+            key: key,
+            product: product,
+          ),
         );
 
   static const String name = 'ProductDetailRoute';
+}
+
+class ProductDetailRouteArgs {
+  const ProductDetailRouteArgs({
+    this.key,
+    required this.product,
+  });
+
+  final _i15.Key? key;
+
+  final _i16.ProductModel product;
+
+  @override
+  String toString() {
+    return 'ProductDetailRouteArgs{key: $key, product: $product}';
+  }
 }
 
 /// generated route for
@@ -452,7 +479,7 @@ class TenderRoute extends _i14.PageRouteInfo<void> {
 class TenderDetailRoute extends _i14.PageRouteInfo<TenderDetailRouteArgs> {
   TenderDetailRoute({
     _i15.Key? key,
-    required _i16.TenderModel tender,
+    required _i17.TenderModel tender,
   }) : super(
           TenderDetailRoute.name,
           path: 'detailis',
@@ -473,7 +500,7 @@ class TenderDetailRouteArgs {
 
   final _i15.Key? key;
 
-  final _i16.TenderModel tender;
+  final _i17.TenderModel tender;
 
   @override
   String toString() {

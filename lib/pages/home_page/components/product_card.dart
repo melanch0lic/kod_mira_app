@@ -1,8 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kod_mira_app/data/network/models/product_model.dart';
-
-import '../../../navigation/router.gr.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductModel product;
@@ -13,7 +10,7 @@ class ProductCard extends StatelessWidget {
     final theme = Theme.of(context);
     return InkWell(
       onTap: () {
-        context.router.push(const ProductDetailRoute());
+        //  context.router.push(ProductDetailRoute(product: product));
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
