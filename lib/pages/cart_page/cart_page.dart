@@ -41,7 +41,54 @@ class CartPage extends ConsumerWidget {
                       Consumer(
                         builder: (context, ref, child) => TextButton(
                             onPressed: () {
-                              ref.read(cartProvider.notifier).state.clear();
+                              final theme = Theme.of(context);
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Center(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: theme.primaryColorLight,
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                      margin: const EdgeInsets.symmetric(horizontal: 22),
+                                      padding: const EdgeInsets.all(17),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const SizedBox(width: double.infinity),
+                                          Text('Вы уверены?',
+                                              style: theme.textTheme.bodyMedium!.copyWith(fontSize: 16)),
+                                          const SizedBox(height: 20),
+                                          SizedBox(
+                                            height: 30,
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                TextButton(
+                                                  onPressed: Navigator.of(context).pop,
+                                                  child: Text('нет'.toUpperCase()),
+                                                ),
+                                                TextButton(
+                                                  child: Text('да'.toUpperCase()),
+                                                  onPressed: () {
+                                                    ref.watch(cartProvider.notifier).state = ref
+                                                        .read(cartProvider)
+                                                        .where((element) => element.id == -1)
+                                                        .toList();
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
                             },
                             child: Text(
                               'Очистить всё',
@@ -77,15 +124,35 @@ class CartPage extends ConsumerWidget {
                             )
                           ],
                         ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-                          decoration: BoxDecoration(
-                            color: const Color.fromRGBO(132, 177, 0, 1),
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: const Text(
-                            'Оформить заказ',
-                            style: TextStyle(color: Colors.white),
+                        GestureDetector(
+                          onTap: () {
+                            ref.watch(cartProvider.notifier).state =
+                                ref.read(cartProvider).where((element) => element.id == -1).toList();
+                            showDialog(
+                                context: context,
+                                builder: (context) => const AlertDialog(
+                                      title: Text("Заказ отправлен"),
+                                      titleTextStyle:
+                                          TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20),
+                                      backgroundColor: Color.fromRGBO(132, 177, 0, 1),
+                                      shape:
+                                          RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                                      content: Text(
+                                        "Ожидайте потверждения",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ));
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(132, 177, 0, 1),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: const Text(
+                              'Оформить заказ',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         )
                       ]),

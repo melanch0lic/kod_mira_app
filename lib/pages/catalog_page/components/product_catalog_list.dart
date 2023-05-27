@@ -18,6 +18,8 @@ class ProductCatalogList extends ConsumerWidget {
       )),
       error: (error, stackTrace) => Text('Ошибка $error'),
       data: (data) => GridView.builder(
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.only(top: 20),
           itemCount: data.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 10, mainAxisExtent: 230),

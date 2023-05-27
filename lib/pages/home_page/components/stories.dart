@@ -19,13 +19,13 @@ class _StoriesState extends State<Stories> {
   @override
   void initState() {
     _items.addAll([
-      [customImageItem('https://m2connect.ru/app_store/story_1.jpg')],
-      [customImageItem('https://m2connect.ru/app_store/story_2.jpg')],
-      [customImageItem('https://m2connect.ru/app_store/story_3.jpg')],
-      [customImageItem('https://m2connect.ru/app_store/story_4.jpg')],
-      [customImageItem('https://m2connect.ru/app_store/story_5.jpg')],
-      [customImageItem('https://m2connect.ru/app_store/story_6.jpg')],
-      [customImageItem('https://m2connect.ru/app_store/story_7.jpg')],
+      [customImageItem('https://i.imgur.com/cCuSSuQ.png')],
+      [customImageItem('https://i.imgur.com/peFRcQo.png')],
+      [customImageItem('https://i.imgur.com/cCuSSuQ.png')],
+      [customImageItem('https://i.imgur.com/cCuSSuQ.png')],
+      [customImageItem('https://i.imgur.com/cCuSSuQ.png')],
+      [customImageItem('https://i.imgur.com/cCuSSuQ.png')],
+      [customImageItem('https://i.imgur.com/cCuSSuQ.png')],
     ]);
     pageController = TransformerPageController(initialPage: widget.index, itemCount: _items.length);
     super.initState();
