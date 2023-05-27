@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kod_mira_app/data/network/models/product_model.dart';
 
+import 'models/tender_model.dart';
+
 final Provider apiClientProvider = Provider<ApiClient>((ref) => ApiClient());
 
 class ApiClient {
@@ -93,6 +95,74 @@ class ApiClient {
       ),
     ];
     return products[categoryType];
+  }
+
+  Future<List<TenderModel>> getTenders() async {
+    await Future.delayed(const Duration(seconds: 1));
+    final tenders = [
+      TenderModel(
+        id: 0,
+        productName: 'технического картофеля',
+        endResult: 500,
+        currentResult: 270,
+        farmName: 'ООО “Барт”',
+        numberSystem: 'кг',
+        price: 17,
+      ),
+      TenderModel(
+        id: 1,
+        productName: 'яблок',
+        endResult: 80,
+        currentResult: 10,
+        farmName: 'ДНТ “Родничок”',
+        numberSystem: 'кг',
+        price: 50,
+      ),
+      TenderModel(
+        id: 2,
+        productName: 'говядины',
+        endResult: 100,
+        currentResult: 75,
+        farmName: 'ИП Епифанцев С.Т.',
+        numberSystem: 'кг',
+        price: 300,
+      ),
+    ];
+    return tenders;
+  }
+
+  Future<List<TenderModel>> getTenderDetailInfoById(int id) async {
+    await Future.delayed(const Duration(seconds: 1));
+    final tendersDetailis = [
+      TenderModel(
+        id: 0,
+        productName: 'технического картофеля',
+        endResult: 500,
+        currentResult: 270,
+        farmName: 'ООО “Барт”',
+        numberSystem: 'кг',
+        price: 17,
+      ),
+      TenderModel(
+        id: 1,
+        productName: 'яблок',
+        endResult: 80,
+        currentResult: 10,
+        farmName: 'ДНТ “Родничок”',
+        numberSystem: 'кг',
+        price: 50,
+      ),
+      TenderModel(
+        id: 2,
+        productName: 'говядины',
+        endResult: 100,
+        currentResult: 75,
+        farmName: 'ИП Епифанцев С.Т.',
+        numberSystem: 'кг',
+        price: 300,
+      ),
+    ];
+    return tendersDetailis;
   }
 
   /* Future<List<FermModel>>  getFerms() async {

@@ -24,13 +24,11 @@ class CatalogPage extends StatelessWidget {
           const SizedBox(height: 15),
           const CatalogCategoryList(),
           const SizedBox(height: 30),
-          Text(
-            'Выбранная категория',
-            style: Theme.of(context)
-                .textTheme
-                .displayLarge!
-                .copyWith(color: const Color.fromRGBO(44, 44, 46, 1), fontSize: 20, fontWeight: FontWeight.w500),
-          ),
+          Text('Выбранная категория',
+              style: Theme.of(context)
+                  .textTheme
+                  .displayLarge!
+                  .copyWith(color: const Color.fromRGBO(44, 44, 46, 1), fontSize: 20, fontWeight: FontWeight.w500)),
           const SizedBox(height: 15),
           const FilterHeader(),
           const SizedBox(height: 15),

@@ -20,7 +20,7 @@ class _TabsPageState extends ConsumerState<TabsPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return AutoTabsScaffold(
-        routes: const [HomeRouter(), CatalogRouter(), ProfileRouter(), CartRouter(), ProfileRouter()],
+        routes: const [HomeRouter(), CatalogRouter(), TenderRouter(), CartRouter(), ProfileRouter()],
         bottomNavigationBuilder: (_, tabsRouter) {
           return CustomNavigationBar(
             borderRadius: const Radius.circular(15),
