@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ShowRowHeader extends StatelessWidget {
-  const ShowRowHeader({super.key});
-
+  const ShowRowHeader({super.key, required this.press});
+  final VoidCallback press;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -10,7 +10,7 @@ class ShowRowHeader extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerRight,
         child: TextButton(
-          onPressed: () {},
+          onPressed: press,
           child: Text('Показать больше',
               style: Theme.of(context)
                   .textTheme

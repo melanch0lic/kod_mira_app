@@ -11,13 +11,13 @@ class CatalogCategoryList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+    return SizedBox(
+      // padding: const EdgeInsets.symmetric(vertical: 8),
       height: 200,
       child: Column(children: [
         Expanded(
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            // padding: const EdgeInsets.symmetric(horizontal: 8),
             scrollDirection: Axis.horizontal,
             children: [
               GestureDetector(
@@ -35,7 +35,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    //padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -67,7 +67,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -99,7 +99,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    //  padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -119,7 +119,7 @@ class CatalogCategoryList extends ConsumerWidget {
         const SizedBox(height: 8),
         Expanded(
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            // padding: const EdgeInsets.symmetric(horizontal: 8),
             scrollDirection: Axis.horizontal,
             children: [
               GestureDetector(
@@ -137,7 +137,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    //padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -151,9 +151,7 @@ class CatalogCategoryList extends ConsumerWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 8,
-              ),
+              const SizedBox(width: 8),
               GestureDetector(
                 onTap: () {
                   ref.watch(categoryCatalogTypeProvider.notifier).state = 4;
@@ -169,7 +167,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
@@ -183,9 +181,7 @@ class CatalogCategoryList extends ConsumerWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 8,
-              ),
+              const SizedBox(width: 8),
               GestureDetector(
                 onTap: () => context.router.push(const CategoriesRoute()),
                 child: Container(
@@ -198,7 +194,7 @@ class CatalogCategoryList extends ConsumerWidget {
                           fit: BoxFit.cover)),
                   alignment: Alignment.bottomLeft,
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),

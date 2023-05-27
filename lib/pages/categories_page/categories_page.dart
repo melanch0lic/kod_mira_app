@@ -18,11 +18,7 @@ class CategoriesPage extends StatelessWidget {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(children: [
-            CategoryTileWidget(
-              image: 'assets/images/fructs.png',
-              name: 'Овощи, фрукты',
-              press: () {},
-            ),
+            CategoryTileWidget(image: 'assets/images/fructs.png', name: 'Овощи, фрукты', press: () {}),
             const SizedBox(height: 15),
             CategoryTileWidget(
               image: 'assets/images/milk.png',

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kod_mira_app/navigation/router.gr.dart';
 
 class TabsPage extends StatefulWidget {
@@ -15,10 +16,12 @@ class _TabsPageState extends State<TabsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return AutoTabsScaffold(
         routes: const [HomeRouter(), CatalogRouter(), ProfileRouter(), CartRouter(), ProfileRouter()],
         bottomNavigationBuilder: (_, tabsRouter) {
           return CustomNavigationBar(
+            borderRadius: const Radius.circular(15),
             iconSize: 30.0,
             selectedColor: const Color.fromRGBO(132, 177, 0, 1),
             strokeColor: const Color(0x30040307),
@@ -26,25 +29,45 @@ class _TabsPageState extends State<TabsPage> {
             backgroundColor: Colors.white,
             items: [
               CustomNavigationBarItem(
-                icon: const Icon(Icons.home),
-                title: const Text("Главная"),
+                icon: SvgPicture.asset('assets/images/home.svg'),
+                title: Text(
+                  "Главная",
+                  style: theme.textTheme.bodyMedium!
+                      .copyWith(fontSize: 12, fontWeight: FontWeight.w500, color: const Color.fromRGBO(132, 177, 0, 1)),
+                ),
               ),
               CustomNavigationBarItem(
-                icon: const Icon(Icons.local_mall),
-                title: const Text("Каталог"),
+                icon: SvgPicture.asset('assets/images/catalog.svg'),
+                title: Text(
+                  "Каталог",
+                  style: theme.textTheme.bodyMedium!
+                      .copyWith(fontSize: 12, fontWeight: FontWeight.w500, color: const Color.fromRGBO(132, 177, 0, 1)),
+                ),
               ),
               CustomNavigationBarItem(
                 icon: const Icon(Icons.gavel),
-                title: const Text("Тендер"),
+                title: Text(
+                  "Тендер",
+                  style: theme.textTheme.bodyMedium!
+                      .copyWith(fontSize: 12, fontWeight: FontWeight.w500, color: const Color.fromRGBO(132, 177, 0, 1)),
+                ),
               ),
               CustomNavigationBarItem(
                 showBadge: true,
-                icon: const Icon(Icons.shopping_cart),
-                title: const Text("Корзина"),
+                icon: SvgPicture.asset('assets/images/carma.svg'),
+                title: Text(
+                  "Корзина",
+                  style: theme.textTheme.bodyMedium!
+                      .copyWith(fontSize: 12, fontWeight: FontWeight.w500, color: const Color.fromRGBO(132, 177, 0, 1)),
+                ),
               ),
               CustomNavigationBarItem(
-                icon: const Icon(Icons.account_circle),
-                title: const Text("Профиль"),
+                icon: SvgPicture.asset('assets/images/profile.svg'),
+                title: Text(
+                  "Профиль",
+                  style: theme.textTheme.bodyMedium!
+                      .copyWith(fontSize: 12, fontWeight: FontWeight.w500, color: const Color.fromRGBO(132, 177, 0, 1)),
+                ),
               ),
             ],
             currentIndex: _currentIndex,
