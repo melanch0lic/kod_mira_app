@@ -48,8 +48,8 @@ class ProductCardCart extends StatelessWidget {
                   return InkWell(
                     onTap: () {
                       ref.watch(cartProvider.notifier).state = ref.read(cartProvider) + [product];
-
-                      print(ref.watch(cartProvider.notifier).state);
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          backgroundColor: Color.fromRGBO(132, 177, 0, 1), content: Text('Товар добавлен в корзину')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
